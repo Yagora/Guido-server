@@ -7,7 +7,7 @@ export class IndexPage {
 
     public routes(app): void {
         app.route('/')
-        .get((req: Request, res: Response) => {            
+        .get((req: Request, res: Response) => {
             res.status(200).sendFile(INDEX_PAGE_PATH);
         })
     }

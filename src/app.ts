@@ -1,12 +1,14 @@
-import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import { Carriers } from './routes/carriers';
+import * as express from 'express';
+import * as mongoose from "mongoose";
+import { Carrier } from './routes/carrier';
 import { IndexPage } from './routes/indexPage';
 
 class App {
 
+    public mongoUrl: string = 'mongodb://localhost/Guido-db';
     public app: express.Application;
-    public carriesRoutes: Carriers = new Carriers();
+    public carriesRoutes: Carrier = new Carrier();
     public indexPageRoutes: IndexPage = new IndexPage();
 
     constructor() {
@@ -14,6 +16,7 @@ class App {
         this.config();
         this.indexPageRoutes.routes(this.app);
         this.carriesRoutes.routes(this.app);
+        this.mongoSetup();
     }
 
     private config(): void {
@@ -23,6 +26,10 @@ class App {
         this.app.use(bodyParser.urlencoded({
             extended: false
         }));
+    }
+
+    private mongoSetup(): void{
+        mongoose.connect(this.mongoUrl);
     }
 
 }
