@@ -6,7 +6,9 @@
       "resolveJsonModule": true
     },
     "include": [
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "web/*.ts",
+      "core/**/*.ts"
     ],
     "exclude": [
       "node_modules"
