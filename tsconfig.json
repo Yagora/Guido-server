@@ -1,16 +1,20 @@
 {
     "compilerOptions": {
-      "target": "es6",
+      "target": "es5",
       "module": "commonjs",
       "outDir": "dist"  ,
-      "resolveJsonModule": true
+      "lib": [
+        "es2015",
+        "dom"
+      ]
     },
     "include": [
-      "src/**/*.ts",
-      "web/*.ts",
+      "server/**/*.ts",
+      "web/**/*",
       "core/**/*.ts"
     ],
     "exclude": [
-      "node_modules"
+      "node_modules",
+      "**/*.spec.ts"
     ]
  }

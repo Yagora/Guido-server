@@ -2,15 +2,15 @@
   "name": "guido-server",
   "version": "1.0.0",
   "description": "The real Guido of Cars",
-  "main": "index.js",
+  "main": "dist/server/server.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node ./src/server.ts",
+    "dev": "ts-node ./server/server.ts",
     "start": "nodemon ./dist/server.js",
-    "prod": "npm run build && npm run start",
+    "prod": "cp web/index.html dist/web/ ; npm run build && npm run start",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "express": "^4.16.3",
     "mongoose": "^5.2.18",
     "nodemon": "^1.18.4",
+    "ntypescript": "1.201706190042.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.1.1"
   },
