@@ -1,6 +1,5 @@
 namespace guido.web
 {
-    import dom = guido.core.dom;
 
     export class Starter
     {
@@ -14,10 +13,16 @@ namespace guido.web
             this.router = new Router( w, n, r );
             return this.router;
         }
+
+        public static loadApplication(): void
+        {
+            document.getElementById( "app" ).appendChild( Home.build() );
+        }
     }
 
     window.onload = () => 
     {
+        console.log( "DOM has loaded" );
         Starter.createRouter(
             window,
             "myFirstRouter",
@@ -36,6 +41,7 @@ namespace guido.web
                 },
             ] 
         );
-
+        console.log( Starter.router );
+        Starter.loadApplication();
     }
 }

@@ -21,13 +21,5 @@ namespace guido.web
         {
             return this;    
         }
-
-        /**
-         * Get the current pathname
-         */
-        public getCurrentPath(): string
-        {
-            return this.window.location.pathname;
-        }
     }
 }

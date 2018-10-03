@@ -1,4 +1,4 @@
-namespace guido.core.dom
+namespace guido.web
 {
 
     export class HTML
@@ -16,6 +16,10 @@ namespace guido.core.dom
                 {
                     return this.createSpanElement();
                 }
+                case "button": 
+                {
+                    return this.createButtonElement();
+                }
             }
         }
 
@@ -27,6 +31,11 @@ namespace guido.core.dom
         private static createSpanElement(): HTMLSpanElement
         {
             return document.createElement( "span" );
+        }
+
+        private static createButtonElement(): HTMLButtonElement
+        {
+            return document.createElement( "button" );
         }
     }
 }
