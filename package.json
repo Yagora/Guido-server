@@ -10,7 +10,7 @@
     "build": "tsc",
     "dev": "ts-node ./server/server.ts",
     "start": "nodemon ./dist/server.js",
-    "prod": "cp web/index.html dist/web/ ; npm run build && npm run start",
+    "prod": "npm run build && npm run start",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts"
   },
   "repository": {

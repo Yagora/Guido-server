@@ -1,7 +1,7 @@
 namespace guido.core.dom
 {
 
-    export class DOM
+    export class HTML
     {
 
         public static create( e: string ): HTMLElement
